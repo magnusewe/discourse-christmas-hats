@@ -1,7 +1,7 @@
 {
-  "name": "Christmas hats component",
-  "about_url": "https://meta.discourse.org/t/christmas-hats-component/74853",
-  "license_url": "https://github.com/hnb-ku/discourse-christmas-hats/blob/master/LICENSE",
+  "name": "Christmas Hats",
+  "about_url": "https://github.com/magnusewe/discourse-christmas-hats",
+  "license_url": "https://github.com/magnusewe/discourse-christmas-hats/blob/master/LICENSE",
   "component": true,
   "assets": {
     "hat": "assets/hat.png"
