@@ -1,0 +1,92 @@
+/* Common: Normal topic view, put a hat on each post author */
+$common-post: ".post-stream .topic-post";
+$common-post-hat-part: ".topic-avatar > a::after";
+$common-post-hat: #{$common-post} #{$common-post-hat-part};
+
+/* Desktop: List of topics with avatars of multiple posters for
+   each topic, put a hat on the latest poster for each topic */
+$desktop-list: ".topic-list .topic-list-item";
+$desktop-list-hat-part: ".posters > a.latest::after";
+$desktop-list-hat: #{$desktop-list} #{$desktop-list-hat-part};
+
+/* Desktop: List of latest topics on /categories page,
+   put a hat on all unread topics */
+$desktop-latestlist: ".latest-topic-list .latest-topic-list-item:not(.visited)";
+$desktop-latestlist-hat-part: ".topic-poster > a::after";
+$desktop-latestlist-hat: #{$desktop-latestlist} #{$desktop-latestlist-hat-part};
+
+/* Mobile: List of topics, put a hat on all unread topics */
+$mobile-list: ".topic-list .topic-list-item:not(.visited)";
+$mobile-list-hat-part: ".pull-left > a::after";
+$mobile-list-hat: #{$mobile-list} #{$mobile-list-hat-part};
+
+#{$common-post} .topic-avatar,
+#{$desktop-list} .posters > a.latest,
+#{$desktop-latestlist} .topic-poster > a,
+#{$mobile-list} .pull-left > a {
+  position: relative;
+}
+
+#{$common-post-hat},
+#{$desktop-list-hat},
+#{$desktop-latestlist-hat},
+#{$mobile-list-hat} {
+  content: "";
+  background-image: url($hat);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+#{$common-post-hat} {
+  top: -11px;
+  left: -13px;
+  width: 58px;
+  height: 42px;
+}
+
+#{$desktop-list-hat} {
+  top: -14px;
+  left: -7px;
+  width: 32px;
+  height: 24px;
+}
+
+#{$desktop-latestlist-hat} {
+  top: -38px;
+  left: -12px;
+  width: 58px;
+  height: 42px;
+}
+
+#{$mobile-list-hat} {
+  top: -38px;
+  left: -12px;
+  width: 58px;
+  height: 42px;
+}
+
+#{$common-post}:nth-of-type(2n) #{$common-post-hat-part},
+#{$desktop-list}:nth-of-type(2n) #{$desktop-list-hat-part},
+#{$desktop-latestlist}:nth-of-type(2n) #{$desktop-latestlist-hat-part},
+#{$mobile-list}:nth-of-type(2n) #{$mobile-list-hat-part} {
+  transform: rotate(-5deg) translateX(-2px);
+}
+
+#{$common-post}:nth-of-type(5n) #{$common-post-hat-part},
+#{$desktop-list}:nth-of-type(5n) #{$desktop-list-hat-part},
+#{$desktop-latestlist}:nth-of-type(5n) #{$desktop-latestlist-hat-part},
+#{$mobile-list}:nth-of-type(5n) #{$mobile-list-hat-part} {
+  transform: rotate(5deg) translateX(2px);
+}
+
+#{$common-post}:nth-of-type(3n) #{$common-post-hat-part},
+#{$desktop-latestlist}:nth-of-type(3n) #{$desktop-latestlist-hat-part},
+#{$mobile-list}:nth-of-type(3n) #{$mobile-list-hat-part} {
+  transform: scaleX(-1) rotate(5deg) translateX(-10px);
+}
+
+#{$desktop-list}:nth-of-type(3n) #{$desktop-list-hat-part} {
+  transform: scaleX(-1) rotate(5deg) translateX(-6px);
+}
