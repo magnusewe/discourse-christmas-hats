@@ -53,13 +53,7 @@ $mobile-list-hat: #{$mobile-list} #{$mobile-list-hat-part};
   height: 24px;
 }
 
-#{$desktop-latestlist-hat} {
-  top: -38px;
-  left: -12px;
-  width: 58px;
-  height: 42px;
-}
-
+#{$desktop-latestlist-hat},
 #{$mobile-list-hat} {
   top: -38px;
   left: -12px;
